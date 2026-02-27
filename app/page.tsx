@@ -27,7 +27,7 @@ export default function Dashboard() {
                 <rect x="0" y="82" width="100" height="12" />
               </g>
             </svg>
-            <span className="text-red-600 font-bold text-xs tracking-wide">Lunio</span>
+            <span className="text-red-600 font-medium text-xs tracking-wide">Lunio</span>
           </div>
 
           {/* Top Nav */}
@@ -66,7 +66,7 @@ export default function Dashboard() {
             
             {/* Header */}
             <header className="flex justify-between items-center mb-10">
-              <h1 className="text-4xl font-bold text-gray-900 tracking-tight">
+              <h1 className="text-4xl font-medium text-gray-900 tracking-tight">
                 Hello, <span className="text-red-600">Alex!</span>
               </h1>
               
@@ -110,13 +110,13 @@ export default function Dashboard() {
                   <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full text-xs font-medium mb-4">
                     <span>🔥</span> New Release
                   </div>
-                  <h2 className="text-4xl font-bold leading-tight mb-3">
+                  <h2 className="text-4xl font-medium leading-tight mb-3">
                     Turn Up the Volume<br/>with Gaga
                   </h2>
                   <p className="text-white/70 text-sm mb-8 max-w-xs">
                     Step into her world of bold sound and fearless style.
                   </p>
-                  <button className="bg-white text-black px-6 py-3 rounded-full font-semibold flex items-center gap-2 hover:scale-105 transition-transform shadow-md">
+                  <button className="bg-white text-black px-6 py-3 rounded-full font-medium flex items-center gap-2 hover:scale-105 transition-transform shadow-md">
                     <Play size={18} fill="currentColor" /> Play
                   </button>
                 </div>
@@ -136,7 +136,7 @@ export default function Dashboard() {
               {/* Top Artists */}
               <div>
                 <div className="flex justify-between items-center mb-6">
-                  <h3 className="text-lg font-bold text-gray-900">Your Top Artists</h3>
+                  <h3 className="text-lg font-medium text-gray-900">Your Top Artists</h3>
                   <button className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1 font-medium">
                     See More <ChevronRight size={16} />
                   </button>
@@ -162,7 +162,7 @@ export default function Dashboard() {
                           unoptimized
                         />
                         <div>
-                          <h4 className="font-semibold text-gray-900 text-sm group-hover:text-red-600 transition-colors">{artist.name}</h4>
+                          <h4 className="font-medium text-gray-900 text-sm group-hover:text-red-600 transition-colors">{artist.name}</h4>
                           <p className="text-xs text-gray-500">{artist.listeners} Listeners</p>
                         </div>
                       </div>
@@ -176,7 +176,7 @@ export default function Dashboard() {
             {/* Listening Highlights */}
             <div>
               <div className="flex justify-between items-center mb-6">
-                <h3 className="text-lg font-bold text-gray-900">Listening Highlights</h3>
+                <h3 className="text-lg font-medium text-gray-900">Listening Highlights</h3>
                 <button className="text-sm text-gray-500 hover:text-gray-900 flex items-center gap-1 font-medium">
                   See More <ChevronRight size={16} />
                 </button>
@@ -199,7 +199,7 @@ export default function Dashboard() {
                         unoptimized
                       />
                     </div>
-                    <h4 className="font-semibold text-gray-900 text-sm truncate">{album.title}</h4>
+                    <h4 className="font-medium text-gray-900 text-sm truncate">{album.title}</h4>
                     <p className="text-xs text-gray-500 truncate">{album.artist}</p>
                   </div>
                 ))}
@@ -222,7 +222,7 @@ export default function Dashboard() {
                 unoptimized
               />
               <div>
-                <h4 className="font-semibold text-gray-900 text-sm">Born To Die</h4>
+                <h4 className="font-medium text-gray-900 text-sm">Born To Die</h4>
                 <p className="text-xs text-gray-500">Lana Del Rey</p>
               </div>
             </div>
