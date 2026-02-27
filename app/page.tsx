@@ -15,17 +15,9 @@ export default function Dashboard() {
         <aside className="w-24 flex flex-col items-center py-8 z-10 bg-white border-r border-gray-100 shrink-0">
           {/* Logo */}
           <div className="flex flex-col items-center gap-1 mb-12">
-            <svg viewBox="0 0 100 100" className="w-10 h-10 text-red-600" fill="currentColor">
-              <clipPath id="circle-clip">
-                <circle cx="50" cy="50" r="45" />
-              </clipPath>
-              <g clipPath="url(#circle-clip)">
-                <rect x="0" y="10" width="100" height="12" />
-                <rect x="0" y="28" width="100" height="12" />
-                <rect x="0" y="46" width="100" height="12" />
-                <rect x="0" y="64" width="100" height="12" />
-                <rect x="0" y="82" width="100" height="12" />
-              </g>
+            <svg viewBox="0 0 100 100" className="w-10 h-10 text-red-600">
+              <circle cx="50" cy="50" r="45" fill="currentColor" />
+              <path d="M18 22h64M10 36h80M5 50h90M10 64h80M18 78h64" stroke="white" strokeWidth="4" strokeLinecap="round" />
             </svg>
             <span className="text-red-600 font-medium text-xs tracking-wide">Lunio</span>
           </div>
