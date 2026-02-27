@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 import {
   Home, Heart, Compass, User, MessageSquare, Settings, LogOut,
@@ -7,6 +9,17 @@ import {
 } from 'lucide-react';
 
 export default function Dashboard() {
+  const [volume, setVolume] = useState(60);
+  const volumeTrackRef = useRef<HTMLDivElement>(null);
+
+  const handleVolumeChange = (e: React.MouseEvent<HTMLDivElement> | React.PointerEvent<HTMLDivElement>) => {
+    if (!volumeTrackRef.current) return;
+    const rect = volumeTrackRef.current.getBoundingClientRect();
+    const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const percentage = (x / rect.width) * 100;
+    setVolume(percentage);
+  };
+
   return (
     <div className="min-h-screen bg-[#e5e7eb] p-4 md:p-8 flex items-center justify-center font-sans">
       <div className="bg-white rounded-[2.5rem] shadow-2xl w-full max-w-[1400px] h-[90vh] flex overflow-hidden relative">
@@ -244,8 +257,24 @@ export default function Dashboard() {
             <div className="flex items-center justify-end gap-6 w-1/4 min-w-[200px] text-gray-400">
               <div className="flex items-center gap-2">
                 <Volume2 size={18} className="text-gray-600" />
-                <div className="w-16 h-1.5 bg-gray-200 rounded-full overflow-hidden cursor-pointer">
-                  <div className="h-full bg-red-600 w-[60%] rounded-full"></div>
+                <div 
+                  ref={volumeTrackRef}
+                  className="w-16 h-1.5 bg-gray-200 rounded-full cursor-pointer relative group"
+                  onClick={handleVolumeChange}
+                  onPointerDown={(e) => {
+                    e.currentTarget.setPointerCapture(e.pointerId);
+                    handleVolumeChange(e);
+                  }}
+                  onPointerMove={(e) => {
+                    if (e.buttons === 1) handleVolumeChange(e);
+                  }}
+                >
+                  <div 
+                    className="h-full bg-red-600 rounded-full transition-all duration-150 ease-out relative"
+                    style={{ width: `${volume}%` }}
+                  >
+                    <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-white rounded-full shadow opacity-0 group-hover:opacity-100 transition-opacity translate-x-1/2"></div>
+                  </div>
                 </div>
               </div>
               
